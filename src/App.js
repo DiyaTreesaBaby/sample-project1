@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import AddForm from './components/AddForm';
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import AddSearch from './components/AddSearch';
+import AddHome from './components/AddHome';
+import AddDeals from './components/AddDeals';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <Routes>
+<Route  path='/' element={<AddForm/>}/>
+<Route path='/search' element={<AddSearch/>}/>
+<Route path='/home' element={<AddHome/>}/>
+<Route path='/deals' element={<AddDeals/>}/>
+  </Routes>
+  
+  
+  
+  </BrowserRouter>
   );
 }
 
